@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>sign up Page</title>
+  </head>
+  <body>
+    <p>
+     Sign Up
+    </p>
+    <hr style="width:30%;text-align:left;margin-left:0">
+    <form action="Test.php" method="POST">
+      <b>First Name</b>: <textarea name="f_name" cols="30" rows="2"></textarea> <br>
+      <b>Last Name</b>: <textarea name="l_name" cols="30" rows="2"></textarea> <br>
+      <b>Phone Number</b>: <textarea name="tel" cols="30" rows="2"></textarea> <br>
+      <b>Email</b>: <textarea name="email" cols="30" rows="2"></textarea> <br>
+      <b>DOB</b>: <textarea name="dob" cols="30" rows="2"></textarea> <br>
+      <b>Emergency Contact</b>: <textarea name="emc" cols="30" rows="2"></textarea> <br>
+     
+      <input type="submit" value="Continue" name="submit">
+    
+    </form>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up Page</title>
+        <link rel="stylesheet" href="css/signup.css">
+        <nav class="navbar">
+            <div class="logo">RESERVED Real Estate</div>
+            <ul class="nav-links">
+                <li><a href="#">Rent</a></li>
+                <li><a href="#">Buy</a></li>
+                <li><a href="#">Sell</a></li>
+                <li><a href="#">New Homes</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Sign up/Join</a></li>
+            </ul>
+        </nav>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="backend/signup.php" method="POST">
+                <h1>Sign Up</h1>
+                <div class="input-box">
+                    <input type="text" name="f_name" placeholder="First Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="l_name" placeholder="Last Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="email" placeholder="Email" required>
+                </div>
+                <div class="date-box">
+                    <input type="text" name="dob" placeholder="Date of birth" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="emc" placeholder="Emergency Contact" required>
+                </div>
+                <button class="btn" name="submit">Sign up</button>
+            </form>
+        </div>
+    </body>
+</html>

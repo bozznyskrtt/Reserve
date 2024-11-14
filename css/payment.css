@@ -1,0 +1,246 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #0A234D;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #FFBF0C;
+    color: #0A234D;
+    border-radius: 5px;
+}
+
+/* Main Body Styling */
+body {
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: white;
+    flex-direction: column;
+    margin-top: 100px; /* Space for fixed navbar */
+}
+
+/* Container for the whole layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    max-width: 1200px; /* Slightly increased max width */
+    margin: 0 auto;
+    gap: 30px;
+}
+
+/* Left Payment Summary Section */
+.payment-summary {
+    width: 100%; /* Increased width for left section */
+    height: 400px;
+    border: 2px solid #007BFF;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.payment-summary h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
+.payment-summary p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 22px;
+    position: absolute;
+    bottom: 20px; /* Positioning it at the bottom */
+    width: calc(100% - 40px); /* Adjust for padding */
+    padding-right: 20px;
+}
+
+/* Right Payment Form Section */
+.payment-form {
+    width: 100%; /* Increased width for the form section */
+    padding: 20px;
+    background-color: #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.tab-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: #FFBF0C;
+    color: #0A234D;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab.active {
+    background-color: #e9b422;
+}
+
+.form-fields input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.expiry-cvc {
+    display: flex;
+    gap: 10px;
+}
+
+.expiry-cvc input[type="text"] {
+    width: calc(50% - 5px); /* Two fields side by side */
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFBF0C;
+    color: #0A234D;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.continue-btn:hover {
+    background-color: #FFD700;
+}
+
+/* Wrapper Styling for other content */
+.wrapper {
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Input Box Styling */
+.input-box, .date-box {
+    width: 400px;
+    margin: 15px 0;
+}
+
+.input-box input, .date-box input {
+    width: 100%; /* Full width within wrapper */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFBF0C;
+    color: #0A234D;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #F0B40D;
+}
+
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0; /* Add some spacing between items */
+}
+
+.expense-item p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.amount {
+    font-weight: bold;
+    font-size: 18px;
+}

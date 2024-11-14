@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/addproperty.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property</title>
+        <nav class="navbar">
+            <div class="logo">RESERVED Real Estate</div>
+            <ul class="nav-links">
+                <li><a href="#">Rent</a></li>
+                <li><a href="#">Buy</a></li>
+                <li><a href="#">Sell</a></li>
+                <li><a href="#">New Homes</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Sign up/Join</a></li>
+            </ul>
+        </nav>
+</head>
+<body>
+    <h2 class="head">Add Property</h2>
+    <form id="textForm" action="backend/addproperty.php" method="post" enctype="multipart/form-data">
+        <div id="textFieldsContainer">
+            <input class="Property_Name"type="text" name="Property_Name" placeholder="Property Name">
+            <br>
+            <br>
+            <input class="Address"type="text" name="Address" placeholder="Address">
+            <br>
+            <br>
+            <input class="Unit_Number"type="text" name="Unit_Number" placeholder="Room Number">
+            <br>
+            <br>
+            <input class="Area"type="text" name="Area" placeholder="Area (square meter)">
+            <br>
+            <br>
+            <input class="Property_Type"type="text" name="Property_Type" placeholder="Type">
+            <br>
+            <br>
+            <input class="Number_of_Bedroom"type="text" name="Number_of_Bedroom" placeholder="Number of Bedroom">
+            <br>
+            <br>
+            <input class="Number_of_Bathroom"type="text" name="Number_of_Bathroom" placeholder="Number of Bathroom">
+            <br>
+            <br>
+            <input class="Monthly_Rent"type="text" name="Monthly_Rent" placeholder="Monthly Rent">
+            <br>
+            <br>
+            <input class="Status"type="text" name="Status" placeholder="Status">
+            <br>
+            <br>
+            <input class="images"type="file" name="images[]" accept="image/*" multiple required>
+        </div>
+        <br>
+        <br>
+        <input class="botton"type="submit" value="Submit" name="submit">
+    </form>
+</body> 
+</html>

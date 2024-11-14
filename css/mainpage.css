@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .content-box {
+    flex: 1 1 30%;
+    text-decoration: none;
+  }
+  .box {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  .box-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }

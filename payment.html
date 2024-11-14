@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+    <link rel="stylesheet" href="css/payment.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">RESERVED Real Estate</div>
+        <ul class="nav-links">
+            <li><a href="#">Rent</a></li>
+            <li><a href="#">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">New Homes</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Sign up/Join</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Payments Section -->
+        <div class="payment-summary">
+            <h2>Payments</h2>
+            <hr class="separator">
+            <div class="expense-item">
+                <p>Water</p>
+                <span class="amount">250$</span>
+            </div>
+            <div class="expense-item">
+                <p>Electricity</p>
+                <span class="amount">3,000$</span>
+                <div class="total-amount">
+                    <p>Total Amount</p>
+                    <span>2700 THB</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Form Section -->
+        <div class="payment-form">
+            <h3>Payment Type</h3>
+            <div class="tab-container">
+                <button class="tab active" onclick="showCredit()">Credit</button>
+                <button class="tab" onclick="showQR()">QR Payment</button>
+            </div>
+            <div id="credit-fields" class="form-fields">
+                <input type="text" placeholder="Card no.">
+                <input type="text" placeholder="Name">
+                <div class="expiry-cvc">
+                    <input type="text" placeholder="Expire">
+                    <input type="text" placeholder="CVC">
+                </div>
+                <button class="continue-btn">Continue</button>
+            </div>
+            <div id="qr-image" class="form-fields" style="display: none;">
+                <img src="qr-code.png" alt="QR Code" style="width: 100%; height: auto; border-radius: 5px;">
+            </div>
+        </div>
+    </div>
+    
+    <script src="css/payment.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>

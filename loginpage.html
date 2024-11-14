@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+</head>
+<body>
+    <h2>Login page</h2>
+    <form id="textForm" action="login.php" method="post">
+        <div id="textFieldsContainer">
+            <input type="text" name="email" placeholder="Email"><br>
+            <input type="text" name="password" placeholder="Password">
+        </div>
+        <br><br>
+        <input type="submit" value="Log in" name="submit">
+    </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/loginpage.css"> <!-- Link to the CSS file -->
+    <nav class="navbar">
+        <div class="logo">RESERVED Real Estate</div>
+        <ul class="nav-links">
+            <li><a href="#">Rent</a></li>
+            <li><a href="#">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">New Homes</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Sign up/Join</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Login</h2>
+        <form id="textForm" action="backend/login.php" method="post">
+            <div class="input-box">
+                <input type="text" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn" name="submit">Log In</button>
+        </form>
+    </div>
+</body>
+</html>
