@@ -14,6 +14,7 @@ $sql = "SELECT Properties.Property_ID, Properties.Property_Name, Properties.Addr
 
 if($result = $conn->query($sql)){
 
-} else {
+} 
+else {
 
 }
