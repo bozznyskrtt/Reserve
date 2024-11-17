@@ -54,7 +54,7 @@
             <li><a href="#">News</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Contact us</a></li>
-            <li><a href="#">Sign up/Join</a></li>
+            <!-- <li><a href="#">Sign up/Join</a></li> -->
             <!-- Dropdown Menu in the Navbar -->
             <li class="dropdown">
                 <a href="#" class="dropbtn">Profile</a>
