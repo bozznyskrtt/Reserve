@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/rent.css">
 </head>
 <body>
-    <?php include 'backend/lease.php'; ?>
+    <?php include 'backend/rent.php'; ?>
     <nav class="navbar">
         <div class="logo">RESERVED Real Estate</div>
         <ul class="nav-links">
