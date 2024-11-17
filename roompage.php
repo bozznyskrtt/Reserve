@@ -27,7 +27,7 @@
         }
 
         .dropdown-content a {
-            color: black;
+            color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -96,7 +96,7 @@
             <p>Total</p>
             <span class="amount">3,250$</span>
         </div>
-        <a href="payment.html">
+        <a href="paymentpage.html">
         <button name="pay" class="btn">Pay now</button>
         </a>
     </div>
