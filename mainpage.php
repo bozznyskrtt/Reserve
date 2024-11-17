@@ -23,7 +23,7 @@ include 'backend/main.php';
     </form>
     <div class="container">
   <?php while($row = $result->fetch_assoc()): ?>
-    <a href="rent.php?id=<?= $row['Property_ID']; ?>" class="content-box">
+    <a href="rentpage.php?id=<?= $row['Property_ID']; ?>" class="content-box">
       <div class="box">
         <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $row['Property_ID']; ?>" alt="<?= $row['Property_Name']; ?>" class="box-image">
         <h3><?= $row['Property_Name']; ?></h3>
