@@ -2,7 +2,7 @@
 include 'db_connect.php';
 
 $sql = "SELECT Properties.Property_ID, Properties.Property_Name, Properties.Address, 
-               Properties.Monthly_Rent, Property_Image.Inamge_data
+               Properties.Monthly_Rent, Property_Image.Image_data
         FROM Properties
         LEFT JOIN Property_Image ON Properties.Property_ID = Property_Image.Property_ID
         WHERE Property_Image.Image_ID = (
@@ -12,9 +12,6 @@ $sql = "SELECT Properties.Property_ID, Properties.Property_Name, Properties.Addr
         )
         ";
 
-if($result = $conn->query($sql)){
+$result = $conn->query($sql)
 
-} 
-else {
-
-}
+?>
