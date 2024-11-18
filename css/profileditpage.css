@@ -1,0 +1,141 @@
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0A234D;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .nav-links a:hover {
+    color: #FFBF0C;
+}
+
+
+/* Profile Container */
+.profile-container {
+    margin: 120px auto; /* Below navbar */
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Profile Picture Section */
+.profile-picture {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #FFBF0C;
+    object-fit: cover;
+}
+
+.upload-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: white;
+    background-color: #0A234D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: #FFBF0C;
+}
+
+#profile-pic-upload {
+    display: none; /* Hidden input */
+}
+
+/* Form Section */
+.form-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #0A234D;
+}
+
+.form-section input,
+.form-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-section select {
+    cursor: pointer;
+}
+
+.form-section textarea {
+    resize: none;
+}
+
+/* Save Button */
+.form-actions {
+    text-align: center;
+}
+
+.save-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0A234D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #FFBF0C;
+}
