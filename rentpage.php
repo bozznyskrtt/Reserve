@@ -1,7 +1,3 @@
-<?php include 'backend/rent.php'; ?>
-   
-<?php $_GET['property_id'] = $property['Property_ID'];  
-include 'backend/get_image.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +5,9 @@ include 'backend/get_image.php';?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Details</title>
     <link rel="stylesheet" href="css/rent.css">
-
 </head>
 <body>
-
+    <?php include 'backend/lease.php'; ?>
     <nav class="navbar">
         <div class="logo">RESERVED Real Estate</div>
         <ul class="nav-links">
@@ -26,18 +21,17 @@ include 'backend/get_image.php';?>
             <li><a href="#">Sign up/Join</a></li>
         </ul>
     </nav>
-    <form method="POST">
     <div class="container">
         <!-- Image Carousel Section -->
         <div class="image-carousel">
-        <img id="property-image" alt="Property Image" />
+            <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $property['Property_ID']; ?>"  alt="<?= $property['Property_Name']; ?>">
             <div class="carousel-controls">
-                <button id="prev-btn" onclick = "prevImage()">&lt;</button>
-                <span id="image-counter">1/<?= $image_count ?></span>
-                <button id="next-btn" onclick = "nextImage()">&gt;</button>
+                <button id="prev-btn">&lt;</button>
+                <span id="image-counter">1/7</span>
+                <button id="next-btn">&gt;</button>
             </div>
         </div>
-    </form>
+
         <!-- Property Details Section -->
         <div class="property-details">
             <h2><?= htmlspecialchars($property['Property_Name']); ?></h2>
@@ -52,36 +46,7 @@ include 'backend/get_image.php';?>
             <button class="rent-btn">Rent</button>
         </div>
     </div>
-    <script>
-        let currentIndex = 0; // Start with the first image
-        let totalImages = <?= $image_count ?>; // Total number of images
 
-        // Function to update the image
-        function updateImage() {
-            const img = document.getElementById("property-image");
-            img.src = "data:image/jpeg;base64,<?= $images[currentIndex] ?>"; // Set the image source to the current base64-encoded image data
-
-            // Update image counter
-            document.getElementById("image-counter").textContent = (currentIndex + 1) + "/" + totalImages;
-        }
-
-        // Function to go to the next image
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % totalImages; // Increment index and wrap around
-            updateImage();
-        }
-
-        // Function to go to the previous image
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Decrement index and wrap around
-            updateImage();
-        }
-
-        updateImage();
-    </script>
-    <script>
-        window.onload = updateImage();
-    </script>
-    <!-- <script src="css/rent.js"></script> -->
+    <script src="css/rent.js"></script>
 </body>
 </html>
