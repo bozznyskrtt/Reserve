@@ -1,9 +1,11 @@
 <?php
 // Include the database connection
 include 'db_connect.php';
-
+include 'image_count.php';
 // Get the Property_ID from the URL
-$property_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$property_id = isset($_GET['property_id']) ? intval($_GET['property_id']) : 0;
+echo $image_count;
+$count_image = $image_count;
 
 if ($property_id > 0) {
     // Query the database for the specific property

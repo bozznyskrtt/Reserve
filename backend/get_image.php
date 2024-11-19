@@ -1,37 +1,50 @@
 <?php
 include 'db_connect.php';
+include 'image_count.php';
 
-// Retrieve the property_id and current index from the query parameters
 $property_id = isset($_GET['property_id']) ? (int)$_GET['property_id'] : null;
-$current_index = isset($_GET['index']) ? (int)$_GET['index'] : 0;
+$index = isset($_GET['index']) ? (int)$_GET['index'] : null;
+// // Retrieve the property_id and current index from the query parameters
+// $property_id = isset($_GET['property_id']) ? (int)$_GET['property_id'] : null;
+// $index = isset($_GET['index']) ? (int)$_GET['index'] : null;
+// $images = [];
 
-// Fetch all images for this property
-$sql = "SELECT Image_data FROM Property_Image WHERE Property_ID = ?";
+// // Fetch all images for this property
+// $sql = "SELECT Image_ID FROM Property_Image WHERE Property_ID = ?";
+// $stmt = $conn->prepare($sql);
+// $stmt->bind_param("i", $property_id);
+// $stmt->execute();
+// $result = $stmt->get_result();
+
+// // Fetch all image IDs into an array
+// while ($row = $result->fetch_assoc()) {
+//     $images[] = $row['Image_ID']; // Store each image ID in the array
+// }
+
+// // // Count the total number of images
+// $image_count = count($images);
+
+// // Output the image IDs and image count for debugging
+// echo "Image IDs: ";
+// print_r($images);  // Display the array of image IDs
+// echo "<br>Image Count: $image_count";  // Display the number of images
+
+$sql = "SELECT Image_data FROM Property_Image WHERE Image_ID = ? LIMIT 1";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $property_id);
+$stmt->bind_param("i", $images[$index]);
 $stmt->execute();
-$result = $stmt->get_result();
+$stmt->bind_result($image_data);
 
-// Initialize the images array
-$images = [];
-while ($row = $result->fetch_assoc()) {
-    // Base64 encode the image data and add it to the images array
-    $images[] = base64_encode($row['Image_data']);
-}
-
-// Count the number of images
-$image_count = count($images);
-
-// Debugging: Display the number of images
-echo "Number of images: " . $image_count . "<br>";
-
-// Get the current image index and ensure it's within bounds
-$current_image = null;
-if ($image_count > 0) {
-    $current_index = $current_index % $image_count; // Ensure index is within bounds
-    $current_image = $images[$current_index];
+if ($stmt->fetch()) {
+    // Set the header to the correct image type
+    header("Content-Type: image/jpeg"); // Adjust this based on image type if necessary
+    echo $image_data;
 } else {
-    echo "No images available for this property.";
+    // Handle case where image data isn't found, e.g., output a placeholder image
+    header("Content-Type: image/jpg");
+    readfile('FLA_9580.jpg'); // Path to a placeholder image
 }
 
+$stmt->close();
+$conn->close();
 ?>
