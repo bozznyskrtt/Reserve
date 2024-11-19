@@ -1,3 +1,4 @@
+<?php include 'backend/profile.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,15 +67,15 @@
     <div class="profile-container">
         <div class="profile-header">
             <img class="profile-picture" src="images/default-profile.png" alt="Profile Picture">
-            <h1 class="profile-name">John Doe</h1>
+            <h1 class="profile-name"><?= $user['First_Name'] . "&nbsp;&nbsp;" . $user['Last_Name']  ?></h1>
         </div>
         <div class="profile-details">
-            <p><strong>Email:</strong> johndoe@example.com</p>
-            <p><strong>Phone:</strong> +123456789</p>
-            <p><strong>Date of Birth:</strong> 1990-01-01</p>
-            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Email: </strong><?= $user['Email'] ?></p>
+            <p><strong>Phone: </strong><?= $user['Phone_Number'] ?></p>
+            <p><strong>Date of Birth: </strong><?= $user['Date_of_Birth'] ?></p>
+            <!-- <p><strong>Gender: </strong> Male</p> -->
         </div>
-        <form action="profileditpage.html" method="post"">
+        <form action="profileditpage.php" method="POST"">
             <button class="edit-button">Edit Profile</button>
         </form>
     </div>
