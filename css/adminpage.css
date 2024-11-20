@@ -1,0 +1,160 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0A234D;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    height: calc(100vh - 70px); /* Adjust for navbar height */
+    background-color: #F9F9F9;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 20%;
+    background-color: #0A234D;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sidebar-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #102A54;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-btn:hover,
+.sidebar-btn.active {
+    background-color: #FFBF0C;
+}
+
+/* Content Styling */
+.content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.table-container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #0A234D;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container th,
+.table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.table-container th {
+    background-color: #0A234D;
+    color: white;
+    font-size: 14px;
+}
+
+.table-container td {
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Buttons for table actions */
+.action-btn {
+    padding: 5px 10px; /* Reduce padding for compact size */
+    font-size: 12px; /* Smaller font size */
+    border: none;
+    border-radius: 4px; /* Slightly rounded corners */
+    cursor: pointer;
+    margin: 0 3px; /* Narrower spacing between buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #FFBF0C;
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background-color: #E5A709;
+}
+
+.delete-btn {
+    background-color: #FF4C4C;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #D94141;
+}
+
+/* Table Action Column Styling */
+.table-container td:last-child {
+    text-align: center; /* Center-align buttons */
+    width: 100px; /* Reduce column width */
+    white-space: nowrap; /* Prevent wrapping of buttons */
+}
