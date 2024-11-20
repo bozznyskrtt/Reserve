@@ -89,8 +89,8 @@ include 'backend/main.php';
         <p>Monthly Rent: $<?= $row['Monthly_Rent']; ?></p>
       </div>
     </a>
-  <?php endwhile; ?>
-</div>
+    <?php endwhile; ?>
+    </div>
 
 </body>
 </html>

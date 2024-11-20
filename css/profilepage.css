@@ -39,8 +39,10 @@
 .navbar .nav-links a:hover {
     color: #FFBF0C;
 }
+
 /* Profile Container */
 .profile-container {
+    position: sticky;
     max-width: 600px;
     margin: 100px auto; /* Adds space below navbar */
     padding: 20px;
@@ -106,3 +108,33 @@
     background-color: #FFBF0C;
     color: #0A234D;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+  }
+  .content-box {
+    position: relative;
+    width: 500px;
+    height: 380px;
+    left: 100px;
+    flex: 1 1 30%;
+    text-decoration: none;
+  }
+  .box {
+    width: 500px;
+    height: 350px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  .box-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
