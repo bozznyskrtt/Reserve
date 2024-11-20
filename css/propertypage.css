@@ -1,0 +1,101 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0A234D;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .nav-links a:hover {
+    color: #FFBF0C;
+}
+
+/* Property Detail Container */
+.property-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Side: Images */
+.property-images {
+    flex: 1;
+    max-width: 40%;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.property-images h2 {
+    font-size: 20px;
+    color: #0A234D;
+    margin-bottom: 20px;
+}
+
+.image-preview img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 3px solid #FFBF0C;
+    border-radius: 10px;
+}
+
+/* Right Side: Details */
+.property-details {
+    flex: 2;
+    max-width: 60%;
+}
+
+.property-details h2 {
+    font-size: 24px;
+    color: #0A234D;
+    margin-bottom: 20px;
+}
+
+.property-info {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.property-info p {
+    margin-bottom: 10px;
+}
+
+.property-info strong {
+    color: #0A234D;
+}
