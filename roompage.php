@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    include 'backend/room.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,17 +85,13 @@
         <h1>Expenses</h1>
         <hr class="separator">
         <div class="expense-item">
-            <p>Water</p>
-            <span class="amount">250$</span>
-        </div>
-        <div class="expense-item">
-            <p>Electricity</p>
-             <span class="amount">3,000$</span>
+            <p>Rent</p>
+            <span class="amount"><?= $payment ?></span>
         </div>
         <hr class="separator">
         <div class="expense-item">
             <p>Total</p>
-            <span class="amount">3,250$</span>
+            <span class="amount"><?= $payment ?></span>
         </div>
         <a href="paymentpage.html">
         <button name="pay" class="btn">Pay now</button>
