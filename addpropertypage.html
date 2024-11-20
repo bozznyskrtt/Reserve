@@ -63,8 +63,9 @@
             </li>
         </ul>
     </nav>
-
+    <div class="box">
     <h2 class="head">Add Property</h2>
+    <br>
     <form id="textForm" action="backend/addproperty.php" method="post" enctype="multipart/form-data">
         <div id="textFieldsContainer">
             <input class="Property_Name"type="text" name="Property_Name" placeholder="Property Name">
@@ -97,8 +98,8 @@
             <input class="images"type="file" name="images[]" accept="image/*" multiple required>
         </div>
         <br>
-        <br>
         <input class="botton"type="submit" value="Submit" name="submit">
     </form>
+    </div>
 </body> 
 </html>
