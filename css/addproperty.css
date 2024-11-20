@@ -1,48 +1,43 @@
-/* Navbar Styling */
-.navbar {
-    width: 100%;
-    background-color: #0A234D;
-    color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    position: fixed; /* Fix the navbar to the top */
-    top: 0; /* Align to the top of the page */
-    z-index: 1000; /* Ensure it stays on top of other elements */
-    border: solid;
-}
-
-.logo {
-    font-size: 20px;
+    background-color: #0A234D;
+    color: #fff;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
     font-weight: bold;
-    padding: 20px;
-    
-}
-
-.nav-links {
-    list-style: none;
+  }
+  
+  .navbar .nav-links {
     display: flex;
-    gap: 15px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    color: white;
+    list-style: none;
+  }
+  
+  .navbar .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar .nav-links a {
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
-    padding: 8px 12px;
-    transition: background 0.3s;
-}
-
-.nav-links a:hover {
-    background-color: #FFBF0C;
-    color: #0A234D;
-    border-radius: 5px;
-}
+  }
+  
+  .navbar .nav-links a:hover {
+    color: #FFBF0C;
+  }
 
 /* Main Form Styling */
 body {
