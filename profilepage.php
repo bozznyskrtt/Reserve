@@ -66,7 +66,7 @@
     <!-- Profile Page Content -->
     <div class="profile-container">
         <div class="profile-header">
-            <img class="profile-picture" src="images/default-profile.png" alt="Profile Picture">
+            <img class="profile-picture" src="http://localhost/Reserve/backend/display_userimage.php" alt="Profile Picture">
             <h1 class="profile-name"><?= $user['First_Name'] . "&nbsp;&nbsp;" . $user['Last_Name']  ?></h1>
         </div>
         <div class="profile-details">

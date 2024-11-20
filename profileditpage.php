@@ -69,7 +69,7 @@
         <form id="profile-form" action="backend/profile_edit.php" method="POST" enctype="multipart/form-data">
             <!-- Profile Picture -->
             <div class="profile-picture">
-                <img id="profile-img" src="images/default-profile.png" alt="Profile Picture">
+                <img id="profile-img" src="http://localhost/Reserve/backend/display_userimage.php" alt="Profile Picture">
                 <input type="file" id="profile-pic-upload" name="image" accept="image/*">
                 <label for="profile-pic-upload" class="upload-button">Change Picture</label>
             </div>
