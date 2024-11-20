@@ -80,16 +80,16 @@ include 'backend/main.php';
     </div>
   
     <div class="container">
-  <?php while($row = $result->fetch_assoc()): ?>
-    <a href="rentpage.php?property_id=<?= $row['Property_ID']; ?>" class="content-box">
-      <div class="box">
-        <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $row['Property_ID']; ?>" alt="<?= $row['Property_Name']; ?>" class="box-image">
-        <h3><?= $row['Property_Name']; ?></h3>
-        <p>Address: <?= $row['Address']; ?></p>
-        <p>Monthly Rent: $<?= $row['Monthly_Rent']; ?></p>
-      </div>
-    </a>
-  <?php endwhile; ?>
+      <?php while($row = $result->fetch_assoc()): ?>
+        <a href="rentpage.php?property_id=<?= $row['Property_ID']; ?>" class="content-box">
+          <div class="box">
+            <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $row['Property_ID']; ?>" alt="<?= $row['Property_Name']; ?>" class="box-image">
+            <h3><?= $row['Property_Name']; ?></h3>
+            <p>Address: <?= $row['Address']; ?></p>
+            <p>Monthly Rent: $<?= $row['Monthly_Rent']; ?></p>
+          </div>
+        </a>
+      <?php endwhile; ?>
 </div>
 
 </body>

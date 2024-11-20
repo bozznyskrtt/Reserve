@@ -1,3 +1,4 @@
+<?php include 'backend/profile.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,43 +66,43 @@
     <!-- Profile Page Content -->
     <div class="profile-container">
         <h1>My Profile</h1>
-        <form id="profile-form">
+        <form id="profile-form" action="backend/profile_edit.php" method="POST" enctype="multipart/form-data">
             <!-- Profile Picture -->
             <div class="profile-picture">
-                <img id="profile-img" src="images/default-profile.png" alt="Profile Picture">
+                <img id="profile-img" src="http://localhost/Reserve/backend/display_userimage.php" alt="Profile Picture">
+                <input type="file" id="profile-pic-upload" name="image" accept="image/*">
                 <label for="profile-pic-upload" class="upload-button">Change Picture</label>
-                <input type="file" id="profile-pic-upload" accept="image/*">
             </div>
-
             <!-- Basic Information -->
             <div class="form-section">
-                <label for="full-name">Full Name:</label>
-                <input type="text" id="full-name" name="full-name" value="John Doe" required>
+                <label for="f_name">First Name:</label>
+                <input type="text" id="first-name" name="f_name" value="<?= $user['First_Name'] ?>" required>
+                
+                <label for="l_name">Last Name:</label>
+                <input type="text" id="last-name" name="l_name" value="<?= $user['Last_Name'] ?>" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="johndoe@example.com" required>
+                <input type="email" id="email" name="email" value="<?= $user['Email'] ?>" required>
 
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" value="+123456789" required>
+                <input type="tel" id="phone" name="phone" value="<?= $user['Phone_Number'] ?>" required>
 
                 <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" required>
+                <input type="date" id="dob" name="dob" value="<?= $user['Date_of_Birth'] ?>" required>
 
-                <label for="gender">Gender:</label>
+                <!-- <label for="gender">Gender:</label>
                 <select id="gender" name="gender" required>
                     <option value="male" selected>Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
-                </select>
+                </select> -->
             </div>
 
             <!-- Save Button -->
             <div class="form-actions">
-                <button type="submit" class="save-button">Save Changes</button>
+                <button type="submit" class="save-button" name="submit" >Save Changes</button>
             </div>
         </form>
     </div>
-
-
 </body>
 </html>
