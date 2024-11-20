@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="css/propertypage.css"> <!-- Link to the new CSS file -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">RESERVED Real Estate</div>
+        <ul class="nav-links">
+            <li><a href="#">Rent</a></li>
+            <li><a href="#">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">New Homes</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Profile</a>
+                <div class="dropdown-content">
+                    <a href="profileview.html">My Profile</a>
+                    <a href="roompage.php">My Room</a>
+                    <a href="backend/logout.php">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Property Details Section -->
+    <div class="property-detail-container">
+        <!-- Left Side: Images -->
+        <div class="property-images">
+            <h2>Property Pictures</h2>
+            <div class="image-preview">
+                <img id="property-img" src="images/default-property.jpg" alt="Property Image">
+            </div>
+        </div>
+
+        <!-- Right Side: Details -->
+        <div class="property-details">
+            <h2>Property Details</h2>
+            <div class="property-info">
+                <p><strong>Title:</strong> Cozy Apartment Downtown</p>
+                <p><strong>Description:</strong> A beautiful 2-bedroom apartment located in the heart of the city. Perfect for small families or working professionals seeking comfort and convenience.</p>
+                <p><strong>Price:</strong> $1200/month</p>
+                <p><strong>Location:</strong> 123 Main Street, Cityville</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
