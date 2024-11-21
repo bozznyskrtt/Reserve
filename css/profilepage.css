@@ -137,7 +137,7 @@ body {
     padding: 20px;
     flex-grow: 1;
     overflow-y: auto; /* Allows scrolling */
-}
+}             
 
 .content-box {
     text-decoration: none;
