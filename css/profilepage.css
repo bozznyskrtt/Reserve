@@ -52,18 +52,20 @@ body {
     color: #FFBF0C;
 }
 
-/* Left Profile Container */
+/* Profile Container */
 .profile-container {
     position: sticky;
     top: 80px; /* Space below navbar */
     width: 300px; /* Fixed width for left container */
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Clean white background for professional feel */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     margin-left: 20px;
     text-align: center;
     flex-shrink: 0; /* Prevent shrinking on smaller screens */
+    font-family: 'Arial', sans-serif; /* Clean font style */
 }
 
 /* Profile Header */
@@ -72,52 +74,59 @@ body {
 }
 
 .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 3px solid #FFBF0C;
+    border: 3px solid #FFBF0C; /* Highlight profile picture with brand color */
     object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add slight shadow */
 }
 
 .profile-name {
-    font-size: 18px;
+    font-size: 22px; /* Larger font for emphasis */
     margin-top: 15px;
-    color: #0A234D;
+    color: #0A234D; /* Brand color */
+    font-weight: bold; /* Make the name stand out */
+    letter-spacing: 0.5px; /* Slight spacing for readability */
 }
 
 /* Profile Details */
 .profile-details {
-    text-align: left;
+    text-align: left; /* Align details to the left for clarity */
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 15px; /* Consistent font size */
+    line-height: 1.6; /* Better spacing between lines */
+    color: #333; /* Neutral text color */
 }
 
 .profile-details p {
-    margin: 10px 0;
-    color: #333;
+    margin: 10px 0; /* Add spacing between details */
 }
 
 .profile-details strong {
-    color: #0A234D;
+    color: #0A234D; /* Emphasize labels with brand color */
 }
 
 /* Edit Button */
 .edit-button {
     display: inline-block;
-    padding: 8px 15px;
-    background-color: #0A234D;
+    padding: 10px 20px;
+    background-color: #0A234D; /* Professional dark background */
     color: white;
     font-size: 14px;
     border-radius: 5px;
     text-decoration: none;
-    margin-top: 15px;
-    transition: background-color 0.3s;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-weight: bold; /* Emphasize button text */
 }
 
 .edit-button:hover {
-    background-color: #FFBF0C;
+    background-color: #FFBF0C; /* Brand color on hover */
     color: #0A234D;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Add hover shadow for interactivity */
 }
+
 
 /* Right Content Container */
 .container {
