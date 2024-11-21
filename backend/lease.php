@@ -33,6 +33,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $pdo = $conn->prepare($sql);
     $pdo->execute();
 
+    $newstatus = "Rented";
+    $sql = "UPDATE Properties SET Status = '$newstatus' WHERE Property_ID = $property_id ;";
+    $new = $conn->prepare($sql);
+    $new->execute();
+    
     $conn->close();
     header("Location: http://localhost/Reserve/roompage.html"); 
 } else {

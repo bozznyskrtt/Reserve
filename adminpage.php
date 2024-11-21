@@ -1,3 +1,4 @@
+<?php include 'backend/admin.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,33 +82,27 @@
                     <thead>
                         <tr>
                             <th>User ID</th>
-                            <th>Name</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Actions</th> <!-- New column for actions -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>John Doe</td>
-                            <td>john@example.com</td>
-                            <td>+123456789</td>
-                            <td>
-                                <button class="action-btn edit-btn">Edit</button>
-                                <button class="action-btn delete-btn">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jane Smith</td>
-                            <td>jane@example.com</td>
-                            <td>+987654321</td>
-                            <td>
-                                <button class="action-btn edit-btn">Edit</button>
-                                <button class="action-btn delete-btn">Delete</button>
-                            </td>
-                        </tr>
+                        <?php while($user = $userresult->fetch_assoc()): ?>
+                            <tr>
+                                <td><?= $user['User_ID'] ?></td>
+                                <td><?= $user['First_Name'] ?></td>
+                                <td><?= $user['Last_Name'] ?></td>
+                                <td><?= $user['Email'] ?></td>
+                                <td><?= $user['Phone_Number'] ?></td>
+                                <td>
+                                    <button class="action-btn edit-btn">Edit</button>
+                                    <button class="action-btn delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
             </div>
@@ -118,33 +113,39 @@
                     <thead>
                         <tr>
                             <th>Property ID</th>
+                            <th>Owner ID</th>
+                            <th>Property Name</th>
                             <th>Address</th>
-                            <th>Owner</th>
-                            <th>Price</th>
+                            <th>Unit Number</th>
+                            <th>Area</th>
+                            <th>Property Type</th>
+                            <th>Bedroom</th>
+                            <th>Bathroom</th>
+                            <th>Monthly Rent</th>
+                            <th>Staus</th>
                             <th>Actions</th> <!-- New column for actions -->
                         </tr>
                     </thead>
                     <tbody>
+                    <?php while($property = $propertyresult->fetch_assoc()): ?>
                         <tr>
-                            <td>101</td>
-                            <td>123 Main St</td>
-                            <td>John Doe</td>
-                            <td>$250,000</td>
+                            <td><?= $property['Property_ID'] ?></td>
+                            <td><?= $property['User_ID'] ?></td>
+                            <td><?= $property['Property_Name'] ?></td>
+                            <td><?= $property['Address'] ?></td>
+                            <td><?= $property['Unit_Number'] ?></td>
+                            <td><?= $property['Area'] ?></td>
+                            <td><?= $property['Property_Type'] ?></td>
+                            <td><?= $property['Number_of_Bedroom'] ?></td>
+                            <td><?= $property['Number_of_Bathrooms'] ?></td>
+                            <td><?= $property['Monthly_Rent'] ?></td>
+                            <td><?= $property['Status'] ?></td>
                             <td>
                                 <button class="action-btn edit-btn">Edit</button>
                                 <button class="action-btn delete-btn">Delete</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>102</td>
-                            <td>456 Elm St</td>
-                            <td>Jane Smith</td>
-                            <td>$300,000</td>
-                            <td>
-                                <button class="action-btn edit-btn">Edit</button>
-                                <button class="action-btn delete-btn">Delete</button>
-                            </td>
-                        </tr>
+                    <?php endwhile; ?>
                     </tbody>
                 </table>
             </div>
