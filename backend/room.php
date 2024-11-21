@@ -30,7 +30,7 @@ if($lease = $result->fetch_assoc()){
         $payment = $monthly+$deposit;
         // echo $payment;
     } else {
-        $recordcount = count($record);
+        $recordcount = $record->num_rows;
         if($monthdiff-$recordcount>0){
             $payment = $monthly;
             // echo $payment;

@@ -1,3 +1,4 @@
+<?php include 'backend/room.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payments</title>
     <link rel="stylesheet" href="css/payment.css"> <!-- Link to the CSS file -->
+    <script src="css/payment.js"></script> <!-- Link to the JavaScript file -->
     <style>
         /* Dropdown styling */
         .dropdown {
@@ -67,15 +69,11 @@
             <h2>Payments</h2>
             <hr class="separator">
             <div class="expense-item">
-                <p>Water</p>
-                <span class="amount">250$</span>
-            </div>
-            <div class="expense-item">
-                <p>Electricity</p>
-                <span class="amount">3,000$</span>
+                <p>Rental</p>
+                <span class="amount"><?= $payment ?></span>
                 <div class="total-amount">
                     <p>Total Amount</p>
-                    <span>2700 THB</span>
+                    <span><?= $payment ?> THB</span>
                 </div>
             </div>
         </div>
@@ -84,8 +82,8 @@
         <div class="payment-form">
             <h3>Payment Type</h3>
             <div class="tab-container">
-                <button class="tab active" onclick="showCredit()">Credit</button>
-                <button class="tab" onclick="showQR()">QR Payment</button>
+                <button class="tab active" value="credit" onclick="showCredit()" name="credit">Credit</button>
+                <button class="tab"  value="qr" onclick="showQR()" name="qr">QR Payment</button>
             </div>
             <div id="credit-fields" class="form-fields">
                 <input type="text" placeholder="Card no.">
@@ -94,8 +92,10 @@
                     <input type="text" placeholder="Expire">
                     <input type="text" placeholder="CVC">
                 </div>
-                <form action="paymentsuccesspage.html" method="post"">
-                    <button class="continue-btn">Continue</button>
+                <form action="backend/payment.php" method="POST">
+                    <!-- Hidden field to store the selected type -->
+                    <input type="hidden" name="selectedType" id="selectedType">
+                    <button class="continue-btn" name="continue">Continue</button>
                 </form>
                
             </div>
@@ -104,6 +104,6 @@
             </div>
         </div>
     </div> 
-    <script src="css/payment.js"></script> <!-- Link to the JavaScript file -->
-</body>
+    
+ </body>
 </html>

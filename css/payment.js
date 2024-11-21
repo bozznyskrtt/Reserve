@@ -10,6 +10,7 @@ function showCredit() {
     qrTab.classList.remove('active');
     creditFields.style.display = 'block';
     qrImage.style.display = 'none';
+    document.getElementById("selectedType").value = button.value;
 }
 
 // Function to show the QR code image
@@ -18,4 +19,5 @@ function showQR() {
     creditTab.classList.remove('active');
     creditFields.style.display = 'none';
     qrImage.style.display = 'block';
+    document.getElementById("selectedType").value = button.value;
 }

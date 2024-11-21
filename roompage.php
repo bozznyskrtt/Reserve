@@ -76,38 +76,34 @@
             <p>My home</p>
         </div>
     </div>
-
-<!-- Content Section Split into Left and Right -->
-<div class="content">
-    <!-- Left Section -->
-   
-    <div class="left-section">
-        <h1>Expenses</h1>
-        <hr class="separator">
-        <div class="expense-item">
-            <p>Rent</p>
-            <span class="amount"><?= $payment ?></span>
-        </div>
-        <hr class="separator">
-        <div class="expense-item">
-            <p>Total</p>
-            <span class="amount"><?= $payment ?></span>
-        </div>
-        <a href="paymentpage.html">
-        <button name="pay" class="btn">Pay now</button>
-        </a>
-    </div>
-    </form>    
-    <!-- Right Section with Big Wrapper Enclosing the Two Small Wrappers -->
-    <div class="right-section">
-        <div class="big-wrapper"> <!-- New big wrapper div -->
-                <div class="wrapper-container">
-                    <div class="wrapper-item">Heart Break</div>
-                    <div class="wrapper-item">Invitation to drink</div>
+    <form action="paymentpage.php" method="POST">
+        <!-- Content Section Split into Left and Right -->
+        <div class="content">
+            <!-- Left Section -->
+            <div class="left-section">
+                <h1>Expenses</h1>
+                <hr class="separator">
+                <div class="expense-item">
+                    <p>Rent</p>
+                    <span class="amount"><?= $payment ?></span>
                 </div>
+                <hr class="separator">
+                <div class="expense-item">
+                    <p>Total</p>
+                    <span class="amount"><?= $payment ?></span>
+                </div>
+                <button name="pay" class="btn">Pay now</button>
+            </div>
+            <!-- Right Section with Big Wrapper Enclosing the Two Small Wrappers -->
+            <div class="right-section">
+                <div class="big-wrapper"> <!-- New big wrapper div -->
+                        <div class="wrapper-container">
+                            <div class="wrapper-item">Heart Break</div>
+                            <div class="wrapper-item">Invitation to drink</div>
+                        </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-</div>
+    </form>
 </body>
 </html>
