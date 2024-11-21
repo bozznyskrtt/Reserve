@@ -10,6 +10,9 @@
 body {
     padding-top: 70px; /* Adjust this value to match the height of your navbar */
     background-color: #f4f4f4; /* Optional: Background for contrast */
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
 /* Navbar */
@@ -130,8 +133,10 @@ body {
 
 /* Right Content Container */
 .container {
-    margin-left: 340px; /* Ensure it doesn't overlap with the profile container */
+    margin-left: 20px; /* Remove extra margin-left */
     padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto; /* Allows scrolling */
 }
 
 .content-box {
