@@ -70,17 +70,18 @@ include 'backend/main.php';
 
     <!-- Profile Container -->
     <div class="profile-container">
-        <div class="profile-header">
-            <img class="profile-picture" src="http://localhost/Reserve/backend/display_userimage.php" alt="Profile Picture">
-            <h2 class="profile-name"><?= $user['First_Name'] . " " . $user['Last_Name'] ?></h2>
-        </div>
-        <div class="profile-details">
-            <p><strong>Email: </strong><?= $user['Email'] ?></p>
-            <p><strong>Phone: </strong><?= $user['Phone_Number'] ?></p>
-            <p><strong>Date of Birth: </strong><?= $user['Date_of_Birth'] ?></p>
-        </div>
-        <a href="profileditpage.php" class="edit-button">Edit Profile</a>
+    <div class="profile-header">
+        <img class="profile-picture" src="http://localhost/Reserve/backend/display_userimage.php" alt="Profile Picture">
+        <h2 class="profile-name"><?= $user['First_Name'] . " " . $user['Last_Name'] ?></h2>
     </div>
+    <div class="profile-details">
+        <p><strong>Email: </strong><?= $user['Email'] ?></p>
+        <p><strong>Phone: </strong><?= $user['Phone_Number'] ?></p>
+        <p><strong>Date of Birth: </strong><?= $user['Date_of_Birth'] ?></p>
+    </div>
+    <a href="profileditpage.php" class="edit-button">Edit Profile</a>
+    </div>
+
 
     <!-- Content Container -->
     <div class="container">
