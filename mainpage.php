@@ -73,9 +73,7 @@ include 'backend/main.php';
     
     <div class="banner">
         <div class="banner-text">
-            <h1><?php echo "Welcome ".$_SESSION['username'] ?></h1>
-            <hr class="separator">
-            <p>My home</p>
+            <h1>Welcome to <strong>RESERVE</strong></h1>
         </div>
     </div>
   

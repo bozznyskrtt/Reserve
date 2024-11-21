@@ -1,7 +1,6 @@
 <?php 
 include 
 'backend/profile.php';
-include 'backend/main.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,16 +81,15 @@ include 'backend/main.php';
     <a href="profileditpage.php" class="edit-button">Edit Profile</a>
     </div>
 
-
     <!-- Content Container -->
     <div class="container">
-        <?php while ($row = $result->fetch_assoc()): ?>
-            <a href="rentpage.php?property_id=<?= $row['Property_ID']; ?>" class="content-box">
+        <?php while ($property = $propresult->fetch_assoc()): ?>
+            <a href="rentpage.php?property_id=<?= $property['Property_ID']; ?>" class="content-box">
                 <div class="box">
-                    <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $row['Property_ID']; ?>" alt="<?= $row['Property_Name']; ?>" class="box-image">
-                    <h3><?= $row['Property_Name']; ?></h3>
-                    <p>Address: <?= $row['Address']; ?></p>
-                    <p>Monthly Rent: $<?= $row['Monthly_Rent']; ?></p>
+                    <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $property['Property_ID']; ?>" alt="<?= $property['Property_Name']; ?>" class="box-image">
+                    <h3><?= $property['Property_Name']; ?></h3>
+                    <p>Address: <?= $property['Address']; ?></p>
+                    <p>Monthly Rent: $<?= $property['Monthly_Rent']; ?></p>
                 </div>
             </a>
         <?php endwhile; ?>

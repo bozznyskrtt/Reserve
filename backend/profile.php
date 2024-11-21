@@ -12,4 +12,8 @@ if($result = $conn->query($sql)){
     echo "Error" . $sql . "<br>" > $conn->error;
 }
 
+$sql = "SELECT * FROM Properties WHERE User_ID = '$userid';";
+
+$propresult = $conn->query($sql);
+$conn->close();
 ?>
