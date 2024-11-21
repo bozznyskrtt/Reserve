@@ -59,7 +59,7 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">Profile</a>
                 <div class="dropdown-content">
-                    <a href="#">My Profile</a>
+                    <a href="profilepage.php">My Profile</a>
                     <a href="roompage.php">My Room</a>
                     <a href="addpropertypage.html">Add Property</a>
                     <a href="backend/logout.php">Logout</a>
