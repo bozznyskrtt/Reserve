@@ -68,35 +68,36 @@ include 'backend/main.php';
         </ul>
     </nav>
 
-    <!-- Profile Page Content -->
+    <!-- Profile Container -->
     <div class="profile-container">
-        <div class="profile-header">
-            <img class="profile-picture" src="http://localhost/Reserve/backend/display_userimage.php" alt="Profile Picture">
-            <h1 class="profile-name"><?= $user['First_Name'] . "&nbsp;&nbsp;" . $user['Last_Name']  ?></h1>
-        </div>
-        <div class="profile-details">
-            <p><strong>Email: </strong><?= $user['Email'] ?></p>
-            <p><strong>Phone: </strong><?= $user['Phone_Number'] ?></p>
-            <p><strong>Date of Birth: </strong><?= $user['Date_of_Birth'] ?></p>
-            <!-- <p><strong>Gender: </strong> Male</p> -->
-        </div>
-        <form action="profileditpage.php" method="POST"">
-            <button class="edit-button">Edit Profile</button>
-        </form>
+    <div class="profile-header">
+        <img class="profile-picture" src="http://localhost/Reserve/backend/display_userimage.php" alt="Profile Picture">
+        <h2 class="profile-name"><?= $user['First_Name'] . " " . $user['Last_Name'] ?></h2>
     </div>
-        
+    <div class="profile-details">
+        <p><strong>Email: </strong><?= $user['Email'] ?></p>
+        <p><strong>Phone: </strong><?= $user['Phone_Number'] ?></p>
+        <p><strong>Date of Birth: </strong><?= $user['Date_of_Birth'] ?></p>
+    </div>
+    <a href="profileditpage.php" class="edit-button">Edit Profile</a>
+    </div>
+
+
+    <!-- Content Container -->
     <div class="container">
-    <?php while($row = $result->fetch_assoc()): ?>
-    <a href="rentpage.php?property_id=<?= $row['Property_ID']; ?>" class="content-box">
-      <div class="box">
-        <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $row['Property_ID']; ?>" alt="<?= $row['Property_Name']; ?>" class="box-image">
-        <h3><?= $row['Property_Name']; ?></h3>
-        <p>Address: <?= $row['Address']; ?></p>
-        <p>Monthly Rent: $<?= $row['Monthly_Rent']; ?></p>
-      </div>
-    </a>
-    <?php endwhile; ?>
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <a href="rentpage.php?property_id=<?= $row['Property_ID']; ?>" class="content-box">
+                <div class="box">
+                    <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $row['Property_ID']; ?>" alt="<?= $row['Property_Name']; ?>" class="box-image">
+                    <h3><?= $row['Property_Name']; ?></h3>
+                    <p>Address: <?= $row['Address']; ?></p>
+                    <p>Monthly Rent: $<?= $row['Monthly_Rent']; ?></p>
+                </div>
+            </a>
+        <?php endwhile; ?>
     </div>
+</body>
+
     
 </body>
 </html>

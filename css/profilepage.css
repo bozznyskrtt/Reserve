@@ -6,7 +6,16 @@
     font-family: Arial, sans-serif;
 }
 
-/* Navbar Styling */
+/* Body Styling */
+body {
+    padding-top: 70px; /* Adjust this value to match the height of your navbar */
+    background-color: #f4f4f4; /* Optional: Background for contrast */
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -14,7 +23,14 @@
     padding: 15px 30px;
     background-color: #0A234D;
     color: #fff;
+    position: fixed; /* Keep navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Place it above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
 }
+
 
 .navbar .logo {
     font-size: 24px;
@@ -43,13 +59,16 @@
 /* Profile Container */
 .profile-container {
     position: sticky;
-    max-width: 600px;
-    margin: 100px auto; /* Adds space below navbar */
+    top: 90px; /* Account for navbar height */
+    width: 300px; /* Fixed width for left container */
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 /* Profile Header */
@@ -58,83 +77,104 @@
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 3px solid #FFBF0C;
+    border: 3px solid #FFBF0C; /* Highlight profile picture with brand color */
     object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add slight shadow */
 }
 
 .profile-name {
-    font-size: 24px;
+    font-size: 22px; /* Larger font for emphasis */
     margin-top: 15px;
-    color: #0A234D;
+    color: #0A234D; /* Brand color */
+    font-weight: bold; /* Make the name stand out */
+    letter-spacing: 0.5px; /* Slight spacing for readability */
 }
 
 /* Profile Details */
 .profile-details {
-    text-align: left;
-    margin: 20px auto;
-    max-width: 400px;
+    text-align: left; /* Align details to the left for clarity */
+    margin-top: 20px;
+    font-size: 15px; /* Consistent font size */
+    line-height: 1.6; /* Better spacing between lines */
+    color: #333; /* Neutral text color */
 }
 
 .profile-details p {
-    font-size: 16px;
-    margin: 10px 0;
-    color: #333;
+    margin: 10px 0; /* Add spacing between details */
 }
 
 .profile-details strong {
-    color: #0A234D;
+    color: #0A234D; /* Emphasize labels with brand color */
 }
 
-/* Edit Profile Button */
-.edit-profile {
-    margin-top: 20px;
-}
-
+/* Edit Button */
 .edit-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #0A234D;
+    background-color: #0A234D; /* Professional dark background */
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-weight: bold; /* Emphasize button text */
 }
 
 .edit-button:hover {
-    background-color: #FFBF0C;
+    background-color: #FFBF0C; /* Brand color on hover */
     color: #0A234D;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Add hover shadow for interactivity */
 }
 
+
+/* Right Content Container */
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    
-  }
-  .content-box {
-    position: relative;
-    width: 500px;
-    height: 380px;
-    left: 100px;
-    flex: 1 1 30%;
+    margin-left: 20px; /* Remove extra margin-left */
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto; /* Allows scrolling */
+}
+
+.content-box {
     text-decoration: none;
-  }
-  .box {
-    width: 500px;
-    height: 350px;
-    padding: 15px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  .box-image {
+    flex: 1 1 calc(33.333% - 20px); /* 3 items per row with gaps */
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.box {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
     object-fit: cover;
     margin-bottom: 10px;
-  }
+}
+
+.box h3 {
+    font-size: 18px;
+    color: #0A234D;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 14px;
+    color: #555;
+}

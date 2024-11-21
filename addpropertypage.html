@@ -5,43 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Add</title>
-    <style>
-        /* Dropdown styling */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%; /* Position below the menu */
-            right: 0; /* Align to the right */
-            background-color: black;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
-        <a href="http://localhost/Reserve/mainpage.php" style="text-decoration: none; color: white;"><div class="logo" href>RESERVED Real Estate</div></a>
+        <a href="http://localhost/Reserve/mainpage.php" style="text-decoration: none; color: white;">
+            <div class="logo">RESERVED Real Estate</div>
+        </a>
         <ul class="nav-links">
             <li><a href="#">Rent</a></li>
             <li><a href="#">Buy</a></li>
@@ -50,10 +20,9 @@
             <li><a href="#">News</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Contact us</a></li>
-            <!-- <li><a href="#">Sign up/Join</a></li> -->
             <!-- Dropdown Menu in the Navbar -->
             <li class="dropdown">
-                <a href="#" class="dropbtn">Profile</a>
+                <a href="#" class="dropbtn" style="text-decoration: none; color: white;">Profile</a>
                 <div class="dropdown-content">
                     <a href="#">My Profile</a>
                     <a href="roompage.php">My Room</a>
@@ -63,43 +32,26 @@
             </li>
         </ul>
     </nav>
+
+    <!-- Enhanced Heading -->
+    <div class="heading">Add Property</div>
+
+    <!-- Box for the form -->
     <div class="box">
-    <h2 class="head">Add Property</h2>
-    <br>
-    <form id="textForm" action="backend/addproperty.php" method="post" enctype="multipart/form-data">
-        <div id="textFieldsContainer">
-            <input class="Property_Name"type="text" name="Property_Name" placeholder="Property Name">
-            <br>
-            <br>
-            <input class="Address"type="text" name="Address" placeholder="Address">
-            <br>
-            <br>
-            <input class="Unit_Number"type="text" name="Unit_Number" placeholder="Room Number">
-            <br>
-            <br>
-            <input class="Area"type="text" name="Area" placeholder="Area (square meter)">
-            <br>
-            <br>
-            <input class="Property_Type"type="text" name="Property_Type" placeholder="Type">
-            <br>
-            <br>
-            <input class="Number_of_Bedroom"type="text" name="Number_of_Bedroom" placeholder="Number of Bedroom">
-            <br>
-            <br>
-            <input class="Number_of_Bathroom"type="text" name="Number_of_Bathroom" placeholder="Number of Bathroom">
-            <br>
-            <br>
-            <input class="Monthly_Rent"type="text" name="Monthly_Rent" placeholder="Monthly Rent">
-            <br>
-            <br>
-            <input class="Status"type="text" name="Status" placeholder="Status">
-            <br>
-            <br>
-            <input class="images"type="file" name="images[]" accept="image/*" multiple required>
-        </div>
-        <br>
-        <input class="botton"type="submit" value="Submit" name="submit">
-    </form>
+        <form id="textForm" action="backend/addproperty.php" method="post" enctype="multipart/form-data">
+            <h2 class="head">Property Details</h2>
+            <input class="Property_Name" type="text" name="Property_Name" placeholder="Property Name">
+            <input class="Address" type="text" name="Address" placeholder="Address">
+            <input class="Unit_Number" type="text" name="Unit_Number" placeholder="Room Number">
+            <input class="Area" type="text" name="Area" placeholder="Area (square meter)">
+            <input class="Property_Type" type="text" name="Property_Type" placeholder="Type">
+            <input class="Number_of_Bedroom" type="text" name="Number_of_Bedroom" placeholder="Number of Bedroom">
+            <input class="Number_of_Bathroom" type="text" name="Number_of_Bathroom" placeholder="Number of Bathroom">
+            <input class="Monthly_Rent" type="text" name="Monthly_Rent" placeholder="Monthly Rent">
+            <input class="Status" type="text" name="Status" placeholder="Status">
+            <input class="images" type="file" name="images[]" accept="image/*" multiple required>
+            <input class="botton" type="submit" value="Submit" name="submit">
+        </form>
     </div>
-</body> 
+</body>
 </html>
