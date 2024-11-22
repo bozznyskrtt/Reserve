@@ -55,9 +55,12 @@
 /* Left Side: Images */
 .property-images {
     flex: 1;
-    max-width: 40%;
+    max-width: 100%;
     text-align: center;
     margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .property-images h2 {
@@ -66,13 +69,19 @@
     margin-bottom: 20px;
 }
 
+.image-preview {
+    width: 100%; /* Ensure the image container takes the full width */
+    height: 100%;
+    max-width: 300px; /* Limit the image width */
+    margin-bottom: 20px;
+}
+
 .image-preview img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+    width: 80px;
+    height: 80px;
     border: 3px solid #FFBF0C;
     border-radius: 10px;
-    margin-bottom: 20px;
+    object-fit: cover; /* Prevents stretching of image */
 }
 
 .upload-button {
@@ -98,7 +107,7 @@
 /* Right Side: Details */
 .property-details {
     flex: 2;
-    max-width: 60%;
+    max-width: 100%;
 }
 
 .property-details h2 {

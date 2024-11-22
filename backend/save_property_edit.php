@@ -3,27 +3,24 @@ session_start();
 include 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $property_id = $conn->real_escape_string($_POST['property_id']);
-    $title = $conn->real_escape_string(trim($_POST['property_title']));
-    $description = $conn->real_escape_string(trim($_POST['property_description']));
-    $price = $conn->real_escape_string($_POST['property_price']);
-    $location = $conn->real_escape_string(trim($_POST['property_location']));
+    // Retrieve and sanitize form data
+    $property_id = $_POST['property_id'];
+    $property_title = $conn->real_escape_string(trim($_POST['property_title']));
+    $property_price = $conn->real_escape_string(trim($_POST['property_price']));
+    $property_location = $conn->real_escape_string(trim($_POST['property_location']));
 
-    $sql = "UPDATE Properties 
-            SET Property_Name = ?, Description = ?, Monthly_Rent = ?, Address = ? 
-            WHERE Property_ID = ?";
+    // Update property in the database
+    $sql = "UPDATE Properties SET Property_Name = ?, Monthly_Rent = ?, Address = ? WHERE Property_ID = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssdsi", $title, $description, $price, $location, $property_id);
+    $stmt->bind_param("sdsi", $property_title, $property_price, $property_location, $property_id);
 
     if ($stmt->execute()) {
-        echo "Property details updated successfully.";
-        if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-            // Code to handle image upload
-        }
+        // Redirect back to the profile page after successful update
+        header("Location: http://localhost/Reserve/profilepage.php");
+        exit();
     } else {
-        echo "Error updating property: " . $stmt->error;
+        echo "Error: " . $stmt->error;
     }
     $stmt->close();
-    header("Location: propertyviewpage.php");
 }
 ?>

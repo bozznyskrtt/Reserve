@@ -83,10 +83,7 @@
                 <input type="hidden" name="property_id" value="<?= $property['Property_ID']; ?>">
 
                 <label for="property-title">Title:</label>
-                <input type="text" id="property-title" name="property_title" value="<?= $property['Property_Name']; ?>" required>
-
-                <label for="property-description">Description:</label>
-                <textarea id="property-description" name="property_description" rows="5" required><?= $property['Description']; ?></textarea>
+                <input type="text" id="property-title" name="property_title" value="<?= $property['Property_Name']; ?>" required>s
 
                 <label for="property-price">Price (USD):</label>
                 <input type="number" id="property-price" name="property_price" value="<?= $property['Monthly_Rent']; ?>" required>
