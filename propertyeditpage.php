@@ -58,6 +58,14 @@
 
                 <label for="property-location">Location:</label>
                 <input type="text" id="property-location" name="property_location" value="<?= $property['Address']; ?>" required>
+                <label for="property-unitnumber">Unit_Number:</label>
+                <input type="text" id="property-unitnumber" name="property_unitnumber" value="<?= $property['Unit_Number']; ?>" required>
+
+                <label for="property-area">Area:</label>
+                <input type="text" id="property-area" name="property_area" value="<?= $property['Area']; ?>" required>
+
+                <label for="property-type">Type:</label>
+                <input type="text" id="property-type" name="property_type" value="<?= $property['Property_Type']; ?>" required>
 
                 <div class="form-actions">
                     <button type="submit" class="save-button">Save Changes</button>
