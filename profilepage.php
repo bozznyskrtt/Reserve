@@ -84,7 +84,7 @@ include
     <!-- Content Container -->
     <div class="container">
         <?php while ($property = $propresult->fetch_assoc()): ?>
-            <a href="propertyeditpage.php?property_id=<?= $property['Property_ID']; ?>" class="content-box">
+            <a href="propertyeditpage.html?property_id=<?= $property['Property_ID']; ?>" class="content-box">
                 <div class="box">
                     <img src="http://localhost/Reserve/backend/display_image.php?property_id=<?= $property['Property_ID']; ?>" alt="<?= $property['Property_Name']; ?>" class="box-image">
                     <h3><?= $property['Property_Name']; ?></h3>
