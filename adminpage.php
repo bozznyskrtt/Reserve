@@ -92,11 +92,11 @@
                     <tbody>
                         <?php while($user = $userresult->fetch_assoc()): ?>
                             <tr>
-                                <td><?= $user['User_ID'] ?></td>
-                                <td><?= $user['First_Name'] ?></td>
-                                <td><?= $user['Last_Name'] ?></td>
-                                <td><?= $user['Email'] ?></td>
-                                <td><?= $user['Phone_Number'] ?></td>
+                                <td data-column="User_ID" data-editable="true"><?= $user['User_ID'] ?></td>
+                                <td data-column="First_Name" data-editable="true"><?= $user['First_Name'] ?></td>
+                                <td data-column="Last_Name" data-editable="true"><?= $user['Last_Name'] ?></td>
+                                <td data-column="Email" data-editable="true"><?= $user['Email'] ?></td>
+                                <td data-column="Phone_Number" data-editable="true"><?= $user['Phone_Number'] ?></td>
                                 <td>
                                     <button class="action-btn edit-btn">Edit</button>
                                     <button class="action-btn delete-btn">Delete</button>
@@ -127,25 +127,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php while($property = $propertyresult->fetch_assoc()): ?>
-                        <tr>
-                            <td><?= $property['Property_ID'] ?></td>
-                            <td><?= $property['User_ID'] ?></td>
-                            <td><?= $property['Property_Name'] ?></td>
-                            <td><?= $property['Address'] ?></td>
-                            <td><?= $property['Unit_Number'] ?></td>
-                            <td><?= $property['Area'] ?></td>
-                            <td><?= $property['Property_Type'] ?></td>
-                            <td><?= $property['Number_of_Bedroom'] ?></td>
-                            <td><?= $property['Number_of_Bathrooms'] ?></td>
-                            <td><?= $property['Monthly_Rent'] ?></td>
-                            <td><?= $property['Status'] ?></td>
-                            <td>
-                                <button class="action-btn edit-btn">Edit</button>
-                                <button class="action-btn delete-btn">Delete</button>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
+                        <?php while($property = $propertyresult->fetch_assoc()): ?>
+                            <tr>
+                                <td data-column="Property_ID" data-editable="true" ><?= $property['Property_ID'] ?></td>
+                                <td data-column="User_ID" data-editable="true"><?= $property['User_ID'] ?></td>
+                                <td data-column="Property_Name" data-editable="true"><?= $property['Property_Name'] ?></td>
+                                <td data-column="Address" data-editable="true"><?= $property['Address'] ?></td>
+                                <td data-column="Unit_Number" data-editable="true"><?= $property['Unit_Number'] ?></td>
+                                <td data-column="Area" data-editable="true"><?= $property['Area'] ?></td>
+                                <td data-column="Property_Type" data-editable="true"><?= $property['Property_Type'] ?></td>
+                                <td data-column="Number_of_Bedroom" data-editable="true"><?= $property['Number_of_Bedroom'] ?></td>
+                                <td data-column="Number_of_Bathrooms" data-editable="true"><?= $property['Number_of_Bathrooms'] ?></td>
+                                <td data-column="Monthly_Rent" data-editable="true"><?= $property['Monthly_Rent'] ?></td>
+                                <td data-column="Status" data-editable="true"><?= $property['Status'] ?></td>
+                                <td>
+                                    <button class="action-btn edit-btn">Edit</button>
+                                    <button class="action-btn delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
             </div>
