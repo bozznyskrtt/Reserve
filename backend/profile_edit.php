@@ -1,11 +1,6 @@
 <?php
 session_start();
 include 'db_connect.php';
-<<<<<<< Updated upstream
-
-=======
-//comment for kuy jak
->>>>>>> Stashed changes
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $f_name = $conn->real_escape_string(trim($_POST['f_name']));
     $l_name = $conn->real_escape_string(trim($_POST['l_name']));
@@ -54,11 +49,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             if ($rowcheck->num_rows === 0){
                 $stmt->bind_param("isb", $userid, $imageName, $null);
+                $stmt->send_long_data(2, $imageData);
             } else {
                 $stmt->bind_param("sbi", $imageName, $null, $userid);
+                $stmt->send_long_data(1, $imageData);
             }
-            // Send image data as blob
-            $stmt->send_long_data(1, $imageData);
+            
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
