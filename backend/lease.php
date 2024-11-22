@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $new->execute();
     
     $conn->close();
-    header("Location: http://localhost/Reserve/roompage.html"); 
+    header("Location: http://localhost/Reserve/roompage.php"); 
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
