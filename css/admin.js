@@ -33,7 +33,6 @@ document.querySelectorAll('.edit-btn').forEach(button => {
         if (!isEditing) {
             // Switch to edit mode
             row.classList.add('editing');
-            // this.style.setProperty("background-color", "green", "important");
             this.textContent = 'Save';
             this.style.backgroundColor = "green";
             row.querySelectorAll('[data-editable="true"]').forEach(cell => {
