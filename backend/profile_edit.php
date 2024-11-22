@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_connect.php';
-
+//comment for push
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $f_name = $conn->real_escape_string(trim($_POST['f_name']));
     $l_name = $conn->real_escape_string(trim($_POST['l_name']));

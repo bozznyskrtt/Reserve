@@ -3,72 +3,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-/* Body Styling */
-body {
-    padding-top: 70px; /* Adjust this value to match the height of your navbar */
-    background-color: #f4f4f4; /* Optional: Background for contrast */
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #0A234D;
-    color: #fff;
-    position: fixed; /* Keep navbar at the top */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ensure it spans the full width */
-    z-index: 1000; /* Place it above other elements */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
-}
-
-
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.navbar .nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.navbar .nav-links li {
-    margin-left: 20px;
-}
-
-.navbar .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.navbar .nav-links a:hover {
-    color: #FFBF0C;
+/* Main Layout Container */
+.main-layout {
+    display: flex; /* Align profile and properties side by side */
+    flex-wrap: nowrap; /* Ensure items don't wrap */
+    gap: 20px; /* Add spacing between profile and properties */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the layout */
 }
 
 /* Profile Container */
 .profile-container {
     position: sticky;
     top: 90px; /* Account for navbar height */
-    width: 300px; /* Fixed width for left container */
+    width: 300px; /* Fixed width for profile container */
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
     text-align: center;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent shrinking */
+    height: fit-content; /* Prevent extra height on the container */
 }
 
 /* Profile Header */
@@ -80,68 +40,71 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid #FFBF0C; /* Highlight profile picture with brand color */
+    border: 3px solid #FFBF0C;
     object-fit: cover;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add slight shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .profile-name {
-    font-size: 22px; /* Larger font for emphasis */
+    font-size: 22px;
     margin-top: 15px;
-    color: #0A234D; /* Brand color */
-    font-weight: bold; /* Make the name stand out */
-    letter-spacing: 0.5px; /* Slight spacing for readability */
+    color: #0A234D;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 /* Profile Details */
 .profile-details {
-    text-align: left; /* Align details to the left for clarity */
+    text-align: left;
     margin-top: 20px;
-    font-size: 15px; /* Consistent font size */
-    line-height: 1.6; /* Better spacing between lines */
-    color: #333; /* Neutral text color */
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
 }
 
 .profile-details p {
-    margin: 10px 0; /* Add spacing between details */
+    margin: 10px 0;
 }
 
 .profile-details strong {
-    color: #0A234D; /* Emphasize labels with brand color */
+    color: #0A234D;
 }
 
 /* Edit Button */
 .edit-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #0A234D; /* Professional dark background */
+    background-color: #0A234D;
     color: white;
     font-size: 14px;
     border-radius: 5px;
     text-decoration: none;
     margin-top: 20px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    font-weight: bold; /* Emphasize button text */
+    font-weight: bold;
 }
 
 .edit-button:hover {
-    background-color: #FFBF0C; /* Brand color on hover */
+    background-color: #FFBF0C;
     color: #0A234D;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Add hover shadow for interactivity */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Right Content Container */
 .container {
-    margin-left: 20px; /* Remove extra margin-left */
+    flex-grow: 1; /* Allow the container to grow and occupy available space */
     padding: 20px;
-    flex-grow: 1;
-    overflow-y: auto; /* Allows scrolling */
-}             
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    min-width: 0; /* Fixes flexbox shrinking issues */
+}
 
+/* Content Box */
 .content-box {
     text-decoration: none;
-    flex: 1 1 calc(33.333% - 20px); /* 3 items per row with gaps */
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row */
     max-width: calc(33.333% - 20px);
     box-sizing: border-box;
 }

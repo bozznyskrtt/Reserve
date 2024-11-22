@@ -7,40 +7,7 @@
     <title>Payments</title>
     <link rel="stylesheet" href="css/payment.css"> <!-- Link to the CSS file -->
     <script src="css/payment.js"></script> <!-- Link to the JavaScript file -->
-    <style>
-        /* Dropdown styling */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%; /* Position below the menu */
-            right: 0; /* Align to the right */
-            background-color: black;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-            color: #FFBF0C;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
     <nav class="navbar">

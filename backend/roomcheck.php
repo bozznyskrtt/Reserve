@@ -10,7 +10,7 @@ $check->execute();
 $rowcheck = $check->get_result();
 
 if($rowcheck->num_rows === 0){
-    echo "You have no room";
+    header("Location: http://localhost/Reserve/youhavenoroom.html");
     $conn->close();
 } else {
     $conn->close();

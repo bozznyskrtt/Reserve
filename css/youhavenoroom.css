@@ -1,0 +1,54 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main Body Styling */
+body {
+    background-color: #f0f4f7; /* Soft background color */
+}
+
+/* Notification Container */
+.notification-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    margin: 100px auto; /* Center the notification with margin */
+    text-align: center;
+}
+
+.notification-container h1 {
+    font-size: 32px;
+    color: #ff6347; /* Tomato red for alert */
+    margin-bottom: 20px;
+}
+
+.notification-container p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Return Button */
+.return-button {
+    background-color: #0a234d; /* Brand color */
+    color: white;
+    font-size: 16px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #ffbf0c; /* Brand color on hover */
+    color: #0a234d;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
