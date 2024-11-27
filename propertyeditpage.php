@@ -37,11 +37,23 @@
         <!-- Left Side: Images -->
         <div class="property-images">
             <h2>Property Pictures</h2>
-            <div class="image-preview">
-                <img id="property-img" src="http://localhost/Reserve/backend/display_property_image.php?property_id=<?= $property['Property_ID']; ?>" alt="Property Image">
+
+            <!-- Current Images -->
+            <div class="current-images">
+                <h3>Current Images</h3>
+                <div class="image-gallery">
+                    <!-- Dynamically added images will appear here -->
+                </div>
             </div>
-            <label for="property-image-upload" class="upload-button">Upload New Image</label>
-            <input type="file" id="property-image-upload" name="image" accept="image/*">
+
+            <!-- Add New Image -->
+            <div class="new-image-upload">
+                <h3>Upload New Images</h3>
+                <div class="upload-container">
+                    <label for="property-image-upload" class="upload-button">Select New Image</label>
+                    <input type="file" id="property-image-upload" name="property_images[]" accept="image/*" multiple>
+                </div>
+            </div>
         </div>
 
         <!-- Right Side: Details -->
@@ -75,20 +87,33 @@
     </div>
 
     <script>
-        // Optional JavaScript for live preview of uploaded image
-        const propertyImageUpload = document.getElementById('property-image-upload');
-        const propertyImg = document.getElementById('property-img');
+        // Simulating dynamic data for current images
+        const currentImages = [
+            'https://via.placeholder.com/100?text=Image1',
+            'https://via.placeholder.com/100?text=Image2',
+            'https://via.placeholder.com/100?text=Image3'
+        ];
 
-        propertyImageUpload.addEventListener('change', function () {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    propertyImg.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
+        // Select the gallery container
+        const imageGallery = document.querySelector('.image-gallery');
+
+        // Function to display current images
+        function displayCurrentImages(images) {
+            imageGallery.innerHTML = ''; // Clear existing content
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = 'Property Image';
+                img.style.width = '100px';
+                img.style.height = '100px';
+                img.style.margin = '5px';
+                img.style.objectFit = 'cover';
+                imageGallery.appendChild(img);
+            });
+        }
+
+        // Initialize with current images
+        displayCurrentImages(currentImages);
     </script>
 </body>
 </html>
