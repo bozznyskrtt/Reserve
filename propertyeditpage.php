@@ -32,98 +32,109 @@
         </ul>
     </nav>
 
-    <!-- Property Edit Section -->
     <div class="property-edit-container">
-        <!-- Left Side: Images -->
-        <div class="property-images">
-            <h2>Property Pictures</h2>
-
-            <!-- Current Images -->
-            <div class="current-images">
-                <h3>Current Images</h3>
-                <div class="image-gallery">
-                    <!-- Dynamically added images will appear here -->
-                </div>
-            </div>
-
-            <!-- Add New Image -->
-            <div class="new-image-upload">
-                <h3>Upload New Images</h3>
-                <div class="upload-container">
-                    <label for="property-image-upload" class="upload-button">Select New Image</label>
-                    <input type="file" id="property-image-upload" name="property_images[]" accept="image/*" multiple>
-                </div>
-            </div>
+    <!-- Left Side: Images -->
+    <div class="property-images">
+        <h2>Property Pictures</h2>
+        <div class="current-images">
+            <h3>Current Images</h3>
+            <div class="image-gallery"></div>
         </div>
-
-        <!-- Right Side: Details -->
-        <div class="property-details">
-            <h2>Edit Property Details</h2>
-            <form action="backend/save_property_edit.php" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="property_id" value="<?= $property['Property_ID']; ?>">
-
-                <label for="property-title">Title:</label>
-                <input type="text" id="property-title" name="property_title" value="<?= $property['Property_Name']; ?>" required>s
-
-                <label for="property-price">Price (USD):</label>
-                <input type="number" id="property-price" name="property_price" value="<?= $property['Monthly_Rent']; ?>" required>
-
-                <label for="property-location">Location:</label>
-                <input type="text" id="property-location" name="property_location" value="<?= $property['Address']; ?>" required>
-                <label for="property-unitnumber">Unit_Number:</label>
-                <input type="text" id="property-unitnumber" name="property_unitnumber" value="<?= $property['Unit_Number']; ?>" required>
-
-                <label for="property-area">Area:</label>
-                <input type="text" id="property-area" name="property_area" value="<?= $property['Area']; ?>" required>
-
-                <label for="property-type">Type:</label>
-                <input type="text" id="property-type" name="property_type" value="<?= $property['Property_Type']; ?>" required>
-
-                <div class="form-actions">
-                    <button type="submit" class="save-button">Save Changes</button>
-                </div>
-            </form>
+        <div class="new-image-upload">
+            <h3>Upload New Images</h3>
+            <div class="upload-container">
+                <label for="property-image-upload" class="upload-button">Select New Image</label>
+                <input type="file" id="property-image-upload" name="property_images[]" accept="image/*" multiple>
+            </div>
         </div>
     </div>
+
+    <!-- Right Side: Details -->
+    <div class="property-details">
+        <h2>Edit Property Details</h2>
+        <form action="backend/save_property_edit.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="property_id" value="<?= $property['Property_ID']; ?>">
+
+            <label for="property-title">Title:</label>
+            <input type="text" id="property-title" name="property_title" value="<?= $property['Property_Name']; ?>" required>
+
+            <label for="property-price">Price (USD):</label>
+            <input type="number" id="property-price" name="property_price" value="<?= $property['Monthly_Rent']; ?>" required>
+
+            <label for="property-location">Location:</label>
+            <input type="text" id="property-location" name="property_location" value="<?= $property['Address']; ?>" required>
+
+            <label for="property-unitnumber">Unit Number:</label>
+            <input type="text" id="property-unitnumber" name="property_unitnumber" value="<?= $property['Unit_Number']; ?>" required>
+
+            <label for="property-area">Area:</label>
+            <input type="text" id="property-area" name="property_area" value="<?= $property['Area']; ?>" required>
+
+            <label for="property-type">Type:</label>
+            <input type="text" id="property-type" name="property_type" value="<?= $property['Property_Type']; ?>" required>
+
+            <div class="form-actions">
+                <button type="submit" class="save-button">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
     
-    <input type="hidden" id="count" name="count" value=<?= $image_count ?>>
+    <input type="hidden" id="count" name="count" value="<?= $image_count ?>">
     <script>
-    // Get the number of images (Count) and initialize the current index
-    let Count = parseInt(document.getElementById('count').value, 10);
-    let currentindex = 0;
+        let Count = parseInt(document.getElementById('count').value, 10);
+        const imageGallery = document.querySelector('.image-gallery');
+        const params = new URLSearchParams(window.location.search);
+        const propertyId = params.get('property_id');
 
-    // Select the gallery container
-    const imageGallery = document.querySelector('.image-gallery');
-    const params = new URLSearchParams(window.location.search);
-    const propertyId = params.get('property_id');
-    console.log(`Property ID: ${propertyId}, Image Count: ${Count}`);
-
-    // Function to generate the URL for each image
-    function getImageUrl(index) {
-        return `http://localhost/Reserve/backend/get_image.php?property_id=${propertyId}&index=${index}`;
-    }
-
-    // Function to display current images
-    function displayCurrentImages(count) {
-        imageGallery.innerHTML = ''; // Clear existing content
-        for (let i = 0; i < count; i++) {
-            const img = document.createElement('img');
-            img.src = getImageUrl(i); // Generate URL dynamically for each image
-            img.alt = `Property Image ${i + 1}`;
-            img.style.width = '100px';
-            img.style.height = '100px';
-            img.style.margin = '5px';
-            img.style.objectFit = 'cover';
-            imageGallery.appendChild(img); // Add the image to the gallery
+        function getImageUrl(index) {
+            return `http://localhost/Reserve/backend/get_image.php?property_id=${propertyId}&index=${index}`;
         }
-    }
 
-    // Initialize the gallery with current images
-    if (Count > 0) {
-        displayCurrentImages(Count);
-    } else {
-        console.error("No images to display.");
-    }
-</script>
+        function deleteImage(index) {
+            if (confirm('Are you sure you want to delete this image?')) {
+                fetch(`http://localhost/Reserve/backend/delete_image.php?property_id=${propertyId}&index=${index}`, {
+                    method: 'DELETE'
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Count -= 1;
+                            displayCurrentImages(Count);
+                        } else {
+                            alert('Failed to delete the image.');
+                        }
+                    })
+                    .catch(err => console.error(err));
+            }
+        }
+
+        function displayCurrentImages(count) {
+            imageGallery.innerHTML = '';
+            for (let i = 0; i < Math.min(count, 9); i++) {
+                const imageWrapper = document.createElement('div');
+                imageWrapper.className = 'image-gallery-item';
+
+                const img = document.createElement('img');
+                img.src = getImageUrl(i);
+                img.alt = `Property Image ${i + 1}`;
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-button';
+                deleteBtn.innerText = '×';
+                deleteBtn.addEventListener('click', () => deleteImage(i));
+
+                imageWrapper.appendChild(img);
+                imageWrapper.appendChild(deleteBtn);
+                imageGallery.appendChild(imageWrapper);
+            }
+        }
+
+        if (Count > 0) {
+            displayCurrentImages(Count);
+        } else {
+            console.error('No images to display.');
+        }
+    </script>
 </body>
 </html>
