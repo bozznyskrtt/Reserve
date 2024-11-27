@@ -1,4 +1,4 @@
-<?php include 'backend/property_edit.php'; ?>
+<?php include 'backend/property_edit.php'; include 'backend/image_count.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,35 +85,45 @@
             </form>
         </div>
     </div>
-
+    
+    <input type="hidden" id="count" name="count" value=<?= $image_count ?>>
     <script>
-        // Simulating dynamic data for current images
-        const currentImages = [
-            'https://via.placeholder.com/100?text=Image1',
-            'https://via.placeholder.com/100?text=Image2',
-            'https://via.placeholder.com/100?text=Image3'
-        ];
+    // Get the number of images (Count) and initialize the current index
+    let Count = parseInt(document.getElementById('count').value, 10);
+    let currentindex = 0;
 
-        // Select the gallery container
-        const imageGallery = document.querySelector('.image-gallery');
+    // Select the gallery container
+    const imageGallery = document.querySelector('.image-gallery');
+    const params = new URLSearchParams(window.location.search);
+    const propertyId = params.get('property_id');
+    console.log(`Property ID: ${propertyId}, Image Count: ${Count}`);
 
-        // Function to display current images
-        function displayCurrentImages(images) {
-            imageGallery.innerHTML = ''; // Clear existing content
-            images.forEach(src => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = 'Property Image';
-                img.style.width = '100px';
-                img.style.height = '100px';
-                img.style.margin = '5px';
-                img.style.objectFit = 'cover';
-                imageGallery.appendChild(img);
-            });
+    // Function to generate the URL for each image
+    function getImageUrl(index) {
+        return `http://localhost/Reserve/backend/get_image.php?property_id=${propertyId}&index=${index}`;
+    }
+
+    // Function to display current images
+    function displayCurrentImages(count) {
+        imageGallery.innerHTML = ''; // Clear existing content
+        for (let i = 0; i < count; i++) {
+            const img = document.createElement('img');
+            img.src = getImageUrl(i); // Generate URL dynamically for each image
+            img.alt = `Property Image ${i + 1}`;
+            img.style.width = '100px';
+            img.style.height = '100px';
+            img.style.margin = '5px';
+            img.style.objectFit = 'cover';
+            imageGallery.appendChild(img); // Add the image to the gallery
         }
+    }
 
-        // Initialize with current images
-        displayCurrentImages(currentImages);
-    </script>
+    // Initialize the gallery with current images
+    if (Count > 0) {
+        displayCurrentImages(Count);
+    } else {
+        console.error("No images to display.");
+    }
+</script>
 </body>
 </html>
