@@ -17,7 +17,7 @@ $property = $result->fetch_assoc();
 // Close the database connection
 $stmt->close();
 ?>
-
+<!-- 
 
 
     <script>
@@ -37,4 +37,4 @@ $stmt->close();
         });
     </script>
 </body>
-</html>
+</html> -->

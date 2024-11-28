@@ -46,6 +46,7 @@ try {
 
     $conn->commit();
     echo json_encode(['success' => true, 'message' => 'Images uploaded successfully.']);
+    header("Location: http://localhost/Reserve/propertyeditpage.php?property_id=$property_id");
 } catch (Exception $e) {
     $conn->rollback();
     http_response_code(500); // Internal Server Error
