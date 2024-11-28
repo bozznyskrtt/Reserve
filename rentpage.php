@@ -11,7 +11,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">RESERVED Real Estate</div>
+        <a href="mainpage.php" style="text-decoration: none; color: white;">
+            <div class="logo">RESERVED Real Estate ADMIN</div>
+        </a>
         <ul class="nav-links">
             <li><a href="#">Rent</a></li>
             <li><a href="#">Buy</a></li>

@@ -15,7 +15,9 @@ include
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <a href="http://localhost/Reserve/mainpage.php" style="text-decoration: none; color: white;"><div class="logo" href>RESERVED Real Estate</div></a>
+        <a href="mainpage.php" style="text-decoration: none; color: white;">
+            <div class="logo">RESERVED Real Estate</div>
+        </a>
         <ul class="nav-links">
             <li><a href="#">Rent</a></li>
             <li><a href="#">Buy</a></li>
