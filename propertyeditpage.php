@@ -43,8 +43,12 @@
         <div class="new-image-upload">
             <h3>Upload New Images</h3>
             <div class="upload-container">
-                <label for="property-image-upload" class="upload-button">Select New Image</label>
+            <form id="uploadForm" action="backend/upload_image.php?property_id=<?= $property['Property_ID']; ?>" method="POST" enctype="multipart/form-data">
                 <input type="file" id="property-image-upload" name="property_images[]" accept="image/*" multiple>
+                <label for="property-image-upload" class="upload-button">Select New Image</label>
+
+                <button type="submit">Upload Images</button>
+            </form>
             </div>
         </div>
     </div>
@@ -79,8 +83,8 @@
         </form>
     </div>
 </div>
-    
     <input type="hidden" id="count" name="count" value="<?= $image_count ?>">
+
     <script>
         let Count = parseInt(document.getElementById('count').value, 10);
         const imageGallery = document.querySelector('.image-gallery');

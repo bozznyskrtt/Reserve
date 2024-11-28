@@ -4,6 +4,19 @@ session_start();
 $userid = $_SESSION['userid'];
 $property_id = isset($_GET['property_id']) ? (int)$_GET['property_id'] : 0;
 
+$sql = "SELECT * FROM Leases WHERE Renter_id = '$userid';";
+$check = $conn->prepare($sql);
+$check->execute();
+$rowcheck = $check->get_result();
+
+if($rowcheck->num_rows === 0){
+    //pass
+} else {
+    $conn->close();
+    echo "You already have room.";
+    exit();
+}
+
 $sql = "SELECT User_ID, Monthly_Rent FROM Properties WHERE Property_ID = ?;";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i",$property_id);
