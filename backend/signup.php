@@ -6,6 +6,8 @@ if (isset($_POST['submit'])) {
     setcookie("email", $_POST['email'], time() + 3600, "/");
     setcookie("dob", $_POST['dob'], time() + 3600, "/");
     setcookie("emc", $_POST['emc'], time() + 3600, "/");
+    header("Location: " . $_SERVER['PHP_SELF'] . "?reload=true");
+    exit();
 }
 if(isset($_COOKIE["f_name"])) {
     echo "Welcome back, " . $_COOKIE["f_name"];
